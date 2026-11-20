@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Temperaturas</title>
+</head>
+<body>
+    <h1>Ingresa la temperatura en Celsius</h1>
+    <form id="formulario">
+        <label for="celsius">Ingresa un número en Celsius: </label>
+        <input type="number" id="celsius" name="celsius" step="any" required>
+        <button type="submit">Calcular</button>
+    </form>
+
+    <h2>Resultados</h2>
+    <p><span>Resultado en Fahrenheit: </span><span id="fahrenheit"></span></p>
+    <p><span>Resultado en Kelvin: </span><span id="kelvin"></span></p>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const inputCelsius = document.getElementById("celsius");
+        const salidaF = document.getElementById("fahrenheit");
+        const salidaK = document.getElementById("kelvin");
+
+        formulario.addEventListener("submit", (evento) => {
+            evento.preventDefault(); // evita que la página se recargue
+
+            const c = Number(inputCelsius.value);
+
+            const f = c * 9 / 5 + 32;
+            const k = c + 273.15;
+
+            salidaF.textContent = f.toFixed(2) + " °F";
+            salidaK.textContent = k.toFixed(2) + " K";
+        });
+    </script>
+</body>
+</html>
