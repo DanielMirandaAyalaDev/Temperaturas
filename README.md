@@ -1,4 +1,4 @@
-# Ejercicio de calculo
+# Ejercicio de cálculo
 
 Crear un programa en Javascript que realice lo siguiente:
 
